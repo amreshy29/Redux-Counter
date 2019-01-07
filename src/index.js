@@ -6,9 +6,11 @@ import "./styles.css";
 import Counter from "./Counter";
 
 const initialState = {
+  // Initian state of Redux state
   count: 12
 };
 function reducer(state = initialState, action) {
+  // action will dispatch with the action type and payload (new values)
   switch (action.type) {
     case "INCREMENT":
       return {
@@ -23,10 +25,11 @@ function reducer(state = initialState, action) {
   }
 }
 
+// Redux store need to create with the reducer, this store is the redux store
 const store = createStore(reducer);
 /* store.dispatch({ type: "INCREMENT" });
 store.dispatch({ type: "DECREMENT" }); */
-
+// Provide from react-redux will connect the redux data to the store
 function App() {
   return (
     <div className="App">
